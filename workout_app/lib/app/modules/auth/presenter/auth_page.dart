@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rive/rive.dart';
@@ -78,8 +79,13 @@ class _AuthPageState extends State<AuthPage> {
                           const SizedBox(height: 16),
                           const InputPassword(),
                           const SizedBox(height: 16),
-                          const Align(
-                              alignment: Alignment.center, child: LoginBtn()),
+                          Align(
+                              alignment: Alignment.center,
+                              child: LoginBtn(
+                                onTap: () async {
+                                  Modular.to.navigate('/home/');
+                                },
+                              )),
                           Align(
                             alignment: Alignment.centerRight,
                             child: TextButton(

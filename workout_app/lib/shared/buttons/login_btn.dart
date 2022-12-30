@@ -3,8 +3,10 @@ import 'package:flutter/src/painting/gradient.dart' as gradient;
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginBtn extends StatefulWidget {
+  final VoidCallback onTap;
   const LoginBtn({
     Key? key,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -20,7 +22,8 @@ class _LoginBtnState extends State<LoginBtn> {
         setState(() {
           selected = !selected;
         });
-        await Future.delayed(const Duration(seconds: 5));
+        // await Future.delayed(const Duration(seconds: 5));
+        widget.onTap();
         setState(() {
           selected = !selected;
         });
